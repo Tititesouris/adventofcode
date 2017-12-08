@@ -24,11 +24,4 @@ def get_root():
     return None
 
 
-def get_pgrm(name):
-    for program in raw_programs:
-        if program[0] == name:
-            return program
-    return None
-
-
 print(get_root()[0])
