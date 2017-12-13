@@ -14,8 +14,11 @@ for i in range(max(layers.keys()) + 1):
         firewall.append([0 for _ in range(layers[i])])
         firewall[i][0] = 1
     else:
-        firewall.append([0])
+        firewall.append([])
 
 severity = 0
 for i in range(len(firewall)):
-    severity += i * (len(firewall[i]) -1)
+    if firewall[i] != []:
+        if i % (2 * len(firewall[i]) - 2) == 0:
+            severity += i * len(firewall[i])
+print(severity)
